@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="OnlineCakeShop.User.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="description" content="Cake Template">
+    <meta name="keywords" content="Cake, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cake </title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../Files/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../Files/css/style.css" type="text/css">
+    <script src="../Files/js/jquery-3.3.1.min.js"></script>
+
+
+    <script>
+        $(function () {
+            var url = window.location.href;
+
+            $("#navbarSupportedContent a").each(function () {
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                }
+            });
+
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__cart">
+            <div class="offcanvas__cart__links">
+                <a href="#" class="search-switch"><img src="../Files/img/icon/search.png" alt=""></a>
+                <a href="#"><img src="../Files/img/icon/heart.png" alt=""></a>
+            </div>
+            <div class="offcanvas__cart__item">
+                <a href="#"><img src="../Files/img/icon/cart.png" alt=""> <span>0</span></a>
+                <div class="cart__price">Cart: <span>₹0.00</span></div>
+            </div>
+        </div>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="../Files/img/logo.png" alt=""></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__option">
+            <ul>
+                <li><a href="#">Sign in | Sign Up</a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header__top__inner">
+                            <div class="header__top__left">
+                                <ul>
+                                     <li> <asp:LinkButton ID="lbSignUp" runat="server" CssClass="signup" CausesValidation="false"
+                                            OnClick="lbSignUp_Click"></asp:LinkButton> | <asp:LinkButton ID="lbLoginOrLogout" runat="server" CssClass="signin" CausesValidation="false"
+                                        OnClick="lbLoginOrLogout_Click1"></asp:LinkButton> 
+                                         </li>
+                                    </ul>
+                                </div>
+                            <div class="header__logo">
+                                <a href="./index.html"><img src="../Files/img/logo.png" alt=""></a>
+                            </div>
+                            <div class="header__top__right">
+                                <div class="header__top__right__cart">
+                                    <a href="Cart.aspx"><img src="../Files/img/icon/cart.png" alt=""> <span class="pr=5">
+                                        <%Response.Write(Session["CartCount"]);
+                                            %></span></a>
+                                    <div class="cart__price">Cart: <span> ₹ <% Response.Write(Session["grandTotalPrice"]);%></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas__open"><i class="fa fa-bars"></i></div>
+            </div>
+        </div>
+        <div class="container" id="navbarSupportedContent">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class=""><a href="Default.aspx">Home</a></li>
+                            <li><a href="About.aspx">About</a></li>
+                            <li><a href="Shop.aspx">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    
+                                    <li><a href="Cart.aspx">Shoping Cart</a></li>
+                                    <li><a href="Checkout.aspx">Checkout</a></li>
+                                    <li><a href="OrderHistory.aspx"> Order History</a></li>
+                                    <li><a href="Profile.aspx"> Profile</a></li>
+                                   
+                                </ul>
+                            </li>
+                            
+                            <li><a href="Contact.aspx">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+        <asp:Panel ID="pnlSliderUC" runat="server"></asp:Panel>
+    <!-- Hero Section End -->
+
+        <!-- Categories Section Begin -->
+        <asp:Panel ID="pnlCategoriesUC" runat="server"></asp:Panel>
+    <!-- Categories Section End -->
+
+  <!-- About Section Begin -->
+        <asp:Panel ID="pnlAboutUC" runat="server"></asp:Panel>
+    <!-- About Section End -->
+
+                        
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+          <!-- Footer Section Begin -->
+  <!-- Footer Section Begin -->
+    <footer class="footer set-bg" data-setbg="../Files/img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>WORKING HOURS</h6>
+                        <ul>
+                            <li>Monday - Friday: 08:00 am – 08:30 pm</li>
+                            <li>Saturday: 10:00 am – 16:30 pm</li>
+                            <li>Sunday: 10:00 am – 16:30 pm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="../Files/img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>Savor the joy of freshly baked indulgence every day. From our ovens to your hear, it's all about delicious bakkery.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__newslatter">
+                        <h6>Subscribe</h6>
+                        <p>Get latest updates and offers.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <p class="copyright__text text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                      </p>
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="copyright__widget">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <div class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </div>
+    </div>
+</div>
+<!-- Search End -->
+
+        
+    </form>
+
+    <!-- Js Plugins -->
+<script src="../Files/js/jquery-3.3.1.min.js"></script>
+<script src="../Files/js/bootstrap.min.js"></script>
+<script src="../Files/js/jquery.nice-select.min.js"></script>
+<script src="../Files/js/jquery.barfiller.js"></script>
+<script src="../Files/js/jquery.magnific-popup.min.js"></script>
+<script src="../Files/js/jquery.slicknav.js"></script>
+<script src="../Files/js/owl.carousel.min.js"></script>
+<script src="../Files/js/jquery.nicescroll.min.js"></script>
+<script src="../Files/js/main.js"></script>
+</body>
+</html>

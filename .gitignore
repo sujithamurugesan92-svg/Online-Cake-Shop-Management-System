@@ -1,0 +1,33 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build folders
+bin/
+obj/
+
+# NuGet
+packages/
+
+# ASP.NET cache
+*.cache
+
+# Logs
+*.log
+
+# IIS Express
+/.vs/config/
+
+# Rider
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Windows files
+Thumbs.db
+Desktop.ini

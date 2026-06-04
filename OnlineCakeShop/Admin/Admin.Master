@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="OnlineCakeShop.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title> Cake | Admin</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+
+
+
+    <script src="../assets/js/core/jquery.min.js"></script>
+
+
+
+    <script>
+        $(function () {
+            var url = window.location.href;
+
+            $("#navbarSupportedContent a").each(function () {
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                }
+            });
+
+        });
+    </script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+                    
+                </a>
+                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    CAKE[ADMIN]
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav" id="navbarSupportedContent">
+                    <li>
+                        <a href="DashBoard.aspx">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Category.aspx">
+                            <i class="now-ui-icons education_atom"></i>
+                            <p>Category</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Product.aspx">
+                            <i class="now-ui-icons location_map-big"></i>          
+                            <p>Product</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ProductLists.aspx">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Product Lists</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="OrderStatus.aspx">
+                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                            <p>Update Status</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Users.aspx">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>Users</p>
+                        </a><%--now-ui-icons design_app--%>
+                    </li>
+                    <li>
+                        <a href="Contacts.aspx">
+                            <i class="now-ui-icons location_pin"></i>
+                            <p>Contact</p>
+                        </a>
+                    </li>
+                    <li>
+    <a href="Report.aspx">
+        <i class="now-ui-icons ui-1_bell-53"></i>
+        <p>Selling Reports</p>
+    </a>
+</li>
+                    <li>
+   <%-- <a href="..User/Login.aspx">
+        <i class="now-ui-icons text_caps-small"></i>
+        <p>Logout</p>
+    </a>--%>
+
+                        <asp:LinkButton ID="lbLogout" runat="server" CausesValidation="false" OnClick="lbLogout_Click">
+                             <i class="now-ui-icons media-1_button-power"></i>Logout
+                        </asp:LinkButton>
+
+</li>
+                    
+ 
+                </ul>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+                    </div>
+ 
+    </form>
+
+
+    <!--   Core JS Files   -->
+
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="../assets/js/plugins/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/now-ui-dashboard.js?v=1.0.1"></script>
+<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/demo/demo.js"></script>
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+    });
+</script>
+
+<script src="../assets/datatables/js/jQuery.dataTables.min.js"></script>
+<script src="../assets/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="../assets/datatables/js/dataTables.responsive.min.js"></script>
+<script src="../assets/datatables/js/dataTables.responsive.bootstrap4.min.js"></script>
+
+<script src="../assets/datatables/js/dataTables.buttons.min.js"></script>
+<script src="../assets/datatables/js/buttons.bootstrap4.min.js"></script>
+<script src="../assets/datatables/js/buttons.print.min.js"></script>
+<script src="../assets/datatables/js/buttons.html5.min.js"></script>
+<script src="../assets/datatables/js/buttons.flash.min.js"></script>
+<script src="../assets/datatables/js/pdfmake.min.js"></script>
+<script src="../assets/datatables/js/vfs_fonts.js"></script>
+
+<script src="../assets/datatables/js/datatable-setting.js"></script>
+
+
+
+</body>
+</html>
